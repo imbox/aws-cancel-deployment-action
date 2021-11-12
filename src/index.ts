@@ -1,4 +1,3 @@
-import process from 'node:process'
 import * as core from '@actions/core'
 
 import run from './action'
@@ -13,6 +12,8 @@ const handleFatal = (error: unknown) => {
   core.error(`Non-error exception\n:${JSON.stringify(error)}`)
 }
 
+// eslint-disable-next-line node/prefer-global/process
 process.on('uncaughtException', handleFatal)
+// eslint-disable-next-line node/prefer-global/process
 process.on('unhandledRejection', handleFatal)
 run().catch(handleFatal)
