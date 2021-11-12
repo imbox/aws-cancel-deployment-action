@@ -2,7 +2,7 @@
 
 ```yml
   - name: Cancel active deployments
-    uses: imbox/aws-cancel-deployment-action
+    uses: imbox/aws-cancel-deployment-action@master
     with:
       aws-region: 'eu-west-1'
       application-name:
