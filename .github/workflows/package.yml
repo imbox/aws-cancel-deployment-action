@@ -16,8 +16,6 @@ jobs:
         ref: master
     - name: Package
       run: |
-        npm ci
-        npm test
         npm run package
     - name: Commit
       run: |

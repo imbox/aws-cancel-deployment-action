@@ -15,7 +15,7 @@
   },
   "scripts": {
     "lint": "xo --fix ./src",
-    "build": "ncc build ./src/index.ts -o dist"
+    "package": "ncc build ./src/index.ts -o dist"
   },
   "xo": {
     "space": true,
