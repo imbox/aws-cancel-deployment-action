@@ -5,7 +5,11 @@
 /***/ ((module) => {
 
 "use strict";
+<<<<<<< HEAD
 module.exports = JSON.parse('{"name":"@aws-sdk/client-codedeploy","description":"AWS SDK for JavaScript Codedeploy Client for Node.js, Browser and React Native","version":"3.40.0","scripts":{"build":"yarn build:cjs && yarn build:es && yarn build:types","build:cjs":"tsc -p tsconfig.json","build:docs":"yarn clean:docs && typedoc ./","build:es":"tsc -p tsconfig.es.json","build:types":"tsc -p tsconfig.types.json","clean":"yarn clean:dist && yarn clean:docs","clean:dist":"rimraf ./dist","clean:docs":"rimraf ./docs","downlevel-dts":"downlevel-dts dist-types dist-types/ts3.4","test":"exit 0"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"2.0.0","@aws-crypto/sha256-js":"2.0.0","@aws-sdk/client-sts":"3.40.0","@aws-sdk/config-resolver":"3.40.0","@aws-sdk/credential-provider-node":"3.40.0","@aws-sdk/fetch-http-handler":"3.40.0","@aws-sdk/hash-node":"3.40.0","@aws-sdk/invalid-dependency":"3.40.0","@aws-sdk/middleware-content-length":"3.40.0","@aws-sdk/middleware-host-header":"3.40.0","@aws-sdk/middleware-logger":"3.40.0","@aws-sdk/middleware-retry":"3.40.0","@aws-sdk/middleware-serde":"3.40.0","@aws-sdk/middleware-signing":"3.40.0","@aws-sdk/middleware-stack":"3.40.0","@aws-sdk/middleware-user-agent":"3.40.0","@aws-sdk/node-config-provider":"3.40.0","@aws-sdk/node-http-handler":"3.40.0","@aws-sdk/protocol-http":"3.40.0","@aws-sdk/smithy-client":"3.40.0","@aws-sdk/types":"3.40.0","@aws-sdk/url-parser":"3.40.0","@aws-sdk/util-base64-browser":"3.37.0","@aws-sdk/util-base64-node":"3.37.0","@aws-sdk/util-body-length-browser":"3.37.0","@aws-sdk/util-body-length-node":"3.37.0","@aws-sdk/util-user-agent-browser":"3.40.0","@aws-sdk/util-user-agent-node":"3.40.0","@aws-sdk/util-utf8-browser":"3.37.0","@aws-sdk/util-utf8-node":"3.37.0","@aws-sdk/util-waiter":"3.40.0","tslib":"^2.3.0"},"devDependencies":{"@aws-sdk/service-client-documentation-generator":"3.38.0","@types/node":"^12.7.5","downlevel-dts":"0.7.0","jest":"^26.1.0","rimraf":"^3.0.0","ts-jest":"^26.4.1","typedoc":"^0.19.2","typescript":"~4.3.5"},"engines":{"node":">=10.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-codedeploy","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-codedeploy"},"_resolved":"https://registry.npmjs.org/@aws-sdk/client-codedeploy/-/client-codedeploy-3.40.0.tgz","_integrity":"sha512-hzfiiFxTPBtAHir7/v6TCeyQR8aOQjymLoBrYDIS2s3bKh3dWJiG6x1SVhpWEr57VVEoj+GipFYYNibNC0o3zg==","_from":"@aws-sdk/client-codedeploy@3.40.0"}');
+=======
+module.exports = JSON.parse('{"name":"@aws-sdk/client-codedeploy","description":"AWS SDK for JavaScript Codedeploy Client for Node.js, Browser and React Native","version":"3.40.0","scripts":{"build":"yarn build:cjs && yarn build:es && yarn build:types","build:cjs":"tsc -p tsconfig.json","build:docs":"yarn clean:docs && typedoc ./","build:es":"tsc -p tsconfig.es.json","build:types":"tsc -p tsconfig.types.json","clean":"yarn clean:dist && yarn clean:docs","clean:dist":"rimraf ./dist","clean:docs":"rimraf ./docs","downlevel-dts":"downlevel-dts dist-types dist-types/ts3.4","test":"exit 0"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"2.0.0","@aws-crypto/sha256-js":"2.0.0","@aws-sdk/client-sts":"3.40.0","@aws-sdk/config-resolver":"3.40.0","@aws-sdk/credential-provider-node":"3.40.0","@aws-sdk/fetch-http-handler":"3.40.0","@aws-sdk/hash-node":"3.40.0","@aws-sdk/invalid-dependency":"3.40.0","@aws-sdk/middleware-content-length":"3.40.0","@aws-sdk/middleware-host-header":"3.40.0","@aws-sdk/middleware-logger":"3.40.0","@aws-sdk/middleware-retry":"3.40.0","@aws-sdk/middleware-serde":"3.40.0","@aws-sdk/middleware-signing":"3.40.0","@aws-sdk/middleware-stack":"3.40.0","@aws-sdk/middleware-user-agent":"3.40.0","@aws-sdk/node-config-provider":"3.40.0","@aws-sdk/node-http-handler":"3.40.0","@aws-sdk/protocol-http":"3.40.0","@aws-sdk/smithy-client":"3.40.0","@aws-sdk/types":"3.40.0","@aws-sdk/url-parser":"3.40.0","@aws-sdk/util-base64-browser":"3.37.0","@aws-sdk/util-base64-node":"3.37.0","@aws-sdk/util-body-length-browser":"3.37.0","@aws-sdk/util-body-length-node":"3.37.0","@aws-sdk/util-user-agent-browser":"3.40.0","@aws-sdk/util-user-agent-node":"3.40.0","@aws-sdk/util-utf8-browser":"3.37.0","@aws-sdk/util-utf8-node":"3.37.0","@aws-sdk/util-waiter":"3.40.0","tslib":"^2.3.0"},"devDependencies":{"@aws-sdk/service-client-documentation-generator":"3.38.0","@types/node":"^12.7.5","downlevel-dts":"0.7.0","jest":"^26.1.0","rimraf":"^3.0.0","ts-jest":"^26.4.1","typedoc":"^0.19.2","typescript":"~4.3.5"},"engines":{"node":">=10.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-codedeploy","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-codedeploy"}}');
+>>>>>>> 0aef20b (fix: gh-actions need node12 target)
 
 /***/ }),
 
@@ -13,7 +17,11 @@ module.exports = JSON.parse('{"name":"@aws-sdk/client-codedeploy","description":
 /***/ ((module) => {
 
 "use strict";
+<<<<<<< HEAD
 module.exports = JSON.parse('{"name":"@aws-sdk/client-sso","description":"AWS SDK for JavaScript Sso Client for Node.js, Browser and React Native","version":"3.40.0","scripts":{"build":"yarn build:cjs && yarn build:es && yarn build:types","build:cjs":"tsc -p tsconfig.json","build:docs":"yarn clean:docs && typedoc ./","build:es":"tsc -p tsconfig.es.json","build:types":"tsc -p tsconfig.types.json","clean":"yarn clean:dist && yarn clean:docs","clean:dist":"rimraf ./dist","clean:docs":"rimraf ./docs","downlevel-dts":"downlevel-dts dist-types dist-types/ts3.4","test":"exit 0"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"2.0.0","@aws-crypto/sha256-js":"2.0.0","@aws-sdk/config-resolver":"3.40.0","@aws-sdk/fetch-http-handler":"3.40.0","@aws-sdk/hash-node":"3.40.0","@aws-sdk/invalid-dependency":"3.40.0","@aws-sdk/middleware-content-length":"3.40.0","@aws-sdk/middleware-host-header":"3.40.0","@aws-sdk/middleware-logger":"3.40.0","@aws-sdk/middleware-retry":"3.40.0","@aws-sdk/middleware-serde":"3.40.0","@aws-sdk/middleware-stack":"3.40.0","@aws-sdk/middleware-user-agent":"3.40.0","@aws-sdk/node-config-provider":"3.40.0","@aws-sdk/node-http-handler":"3.40.0","@aws-sdk/protocol-http":"3.40.0","@aws-sdk/smithy-client":"3.40.0","@aws-sdk/types":"3.40.0","@aws-sdk/url-parser":"3.40.0","@aws-sdk/util-base64-browser":"3.37.0","@aws-sdk/util-base64-node":"3.37.0","@aws-sdk/util-body-length-browser":"3.37.0","@aws-sdk/util-body-length-node":"3.37.0","@aws-sdk/util-user-agent-browser":"3.40.0","@aws-sdk/util-user-agent-node":"3.40.0","@aws-sdk/util-utf8-browser":"3.37.0","@aws-sdk/util-utf8-node":"3.37.0","tslib":"^2.3.0"},"devDependencies":{"@aws-sdk/service-client-documentation-generator":"3.38.0","@types/node":"^12.7.5","downlevel-dts":"0.7.0","jest":"^26.1.0","rimraf":"^3.0.0","ts-jest":"^26.4.1","typedoc":"^0.19.2","typescript":"~4.3.5"},"engines":{"node":">=10.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-sso","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-sso"},"_resolved":"https://registry.npmjs.org/@aws-sdk/client-sso/-/client-sso-3.40.0.tgz","_integrity":"sha512-eFQ4yFg8RlPaldv/ja2K3pUUyXauGbo4GJPlbPKYoquwW785au8qECKSl3iqBmUklj6WmdW1rmtlQk2OUcyYSw==","_from":"@aws-sdk/client-sso@3.40.0"}');
+=======
+module.exports = JSON.parse('{"name":"@aws-sdk/client-sso","description":"AWS SDK for JavaScript Sso Client for Node.js, Browser and React Native","version":"3.40.0","scripts":{"build":"yarn build:cjs && yarn build:es && yarn build:types","build:cjs":"tsc -p tsconfig.json","build:docs":"yarn clean:docs && typedoc ./","build:es":"tsc -p tsconfig.es.json","build:types":"tsc -p tsconfig.types.json","clean":"yarn clean:dist && yarn clean:docs","clean:dist":"rimraf ./dist","clean:docs":"rimraf ./docs","downlevel-dts":"downlevel-dts dist-types dist-types/ts3.4","test":"exit 0"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"2.0.0","@aws-crypto/sha256-js":"2.0.0","@aws-sdk/config-resolver":"3.40.0","@aws-sdk/fetch-http-handler":"3.40.0","@aws-sdk/hash-node":"3.40.0","@aws-sdk/invalid-dependency":"3.40.0","@aws-sdk/middleware-content-length":"3.40.0","@aws-sdk/middleware-host-header":"3.40.0","@aws-sdk/middleware-logger":"3.40.0","@aws-sdk/middleware-retry":"3.40.0","@aws-sdk/middleware-serde":"3.40.0","@aws-sdk/middleware-stack":"3.40.0","@aws-sdk/middleware-user-agent":"3.40.0","@aws-sdk/node-config-provider":"3.40.0","@aws-sdk/node-http-handler":"3.40.0","@aws-sdk/protocol-http":"3.40.0","@aws-sdk/smithy-client":"3.40.0","@aws-sdk/types":"3.40.0","@aws-sdk/url-parser":"3.40.0","@aws-sdk/util-base64-browser":"3.37.0","@aws-sdk/util-base64-node":"3.37.0","@aws-sdk/util-body-length-browser":"3.37.0","@aws-sdk/util-body-length-node":"3.37.0","@aws-sdk/util-user-agent-browser":"3.40.0","@aws-sdk/util-user-agent-node":"3.40.0","@aws-sdk/util-utf8-browser":"3.37.0","@aws-sdk/util-utf8-node":"3.37.0","tslib":"^2.3.0"},"devDependencies":{"@aws-sdk/service-client-documentation-generator":"3.38.0","@types/node":"^12.7.5","downlevel-dts":"0.7.0","jest":"^26.1.0","rimraf":"^3.0.0","ts-jest":"^26.4.1","typedoc":"^0.19.2","typescript":"~4.3.5"},"engines":{"node":">=10.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-sso","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-sso"}}');
+>>>>>>> 0aef20b (fix: gh-actions need node12 target)
 
 /***/ }),
 
@@ -21,7 +29,11 @@ module.exports = JSON.parse('{"name":"@aws-sdk/client-sso","description":"AWS SD
 /***/ ((module) => {
 
 "use strict";
+<<<<<<< HEAD
 module.exports = JSON.parse('{"name":"@aws-sdk/client-sts","description":"AWS SDK for JavaScript Sts Client for Node.js, Browser and React Native","version":"3.40.0","scripts":{"build":"yarn build:cjs && yarn build:es && yarn build:types","build:cjs":"tsc -p tsconfig.json","build:docs":"yarn clean:docs && typedoc ./","build:es":"tsc -p tsconfig.es.json","build:types":"tsc -p tsconfig.types.json","clean":"yarn clean:dist && yarn clean:docs","clean:dist":"rimraf ./dist","clean:docs":"rimraf ./docs","downlevel-dts":"downlevel-dts dist-types dist-types/ts3.4","test":"exit 0"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"2.0.0","@aws-crypto/sha256-js":"2.0.0","@aws-sdk/config-resolver":"3.40.0","@aws-sdk/credential-provider-node":"3.40.0","@aws-sdk/fetch-http-handler":"3.40.0","@aws-sdk/hash-node":"3.40.0","@aws-sdk/invalid-dependency":"3.40.0","@aws-sdk/middleware-content-length":"3.40.0","@aws-sdk/middleware-host-header":"3.40.0","@aws-sdk/middleware-logger":"3.40.0","@aws-sdk/middleware-retry":"3.40.0","@aws-sdk/middleware-sdk-sts":"3.40.0","@aws-sdk/middleware-serde":"3.40.0","@aws-sdk/middleware-signing":"3.40.0","@aws-sdk/middleware-stack":"3.40.0","@aws-sdk/middleware-user-agent":"3.40.0","@aws-sdk/node-config-provider":"3.40.0","@aws-sdk/node-http-handler":"3.40.0","@aws-sdk/protocol-http":"3.40.0","@aws-sdk/smithy-client":"3.40.0","@aws-sdk/types":"3.40.0","@aws-sdk/url-parser":"3.40.0","@aws-sdk/util-base64-browser":"3.37.0","@aws-sdk/util-base64-node":"3.37.0","@aws-sdk/util-body-length-browser":"3.37.0","@aws-sdk/util-body-length-node":"3.37.0","@aws-sdk/util-user-agent-browser":"3.40.0","@aws-sdk/util-user-agent-node":"3.40.0","@aws-sdk/util-utf8-browser":"3.37.0","@aws-sdk/util-utf8-node":"3.37.0","entities":"2.2.0","fast-xml-parser":"3.19.0","tslib":"^2.3.0"},"devDependencies":{"@aws-sdk/service-client-documentation-generator":"3.38.0","@types/node":"^12.7.5","downlevel-dts":"0.7.0","jest":"^26.1.0","rimraf":"^3.0.0","ts-jest":"^26.4.1","typedoc":"^0.19.2","typescript":"~4.3.5"},"engines":{"node":">=10.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-sts","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-sts"},"_resolved":"https://registry.npmjs.org/@aws-sdk/client-sts/-/client-sts-3.40.0.tgz","_integrity":"sha512-7jBlb1uyq2c0bFqi4ZVnEMNzLTodvIZKoxjh1LYA8OZISbMsDjTxFOYOmuyOhuPy0fLfLL3KRLtengJ23zs3QQ==","_from":"@aws-sdk/client-sts@3.40.0"}');
+=======
+module.exports = JSON.parse('{"name":"@aws-sdk/client-sts","description":"AWS SDK for JavaScript Sts Client for Node.js, Browser and React Native","version":"3.40.0","scripts":{"build":"yarn build:cjs && yarn build:es && yarn build:types","build:cjs":"tsc -p tsconfig.json","build:docs":"yarn clean:docs && typedoc ./","build:es":"tsc -p tsconfig.es.json","build:types":"tsc -p tsconfig.types.json","clean":"yarn clean:dist && yarn clean:docs","clean:dist":"rimraf ./dist","clean:docs":"rimraf ./docs","downlevel-dts":"downlevel-dts dist-types dist-types/ts3.4","test":"exit 0"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"2.0.0","@aws-crypto/sha256-js":"2.0.0","@aws-sdk/config-resolver":"3.40.0","@aws-sdk/credential-provider-node":"3.40.0","@aws-sdk/fetch-http-handler":"3.40.0","@aws-sdk/hash-node":"3.40.0","@aws-sdk/invalid-dependency":"3.40.0","@aws-sdk/middleware-content-length":"3.40.0","@aws-sdk/middleware-host-header":"3.40.0","@aws-sdk/middleware-logger":"3.40.0","@aws-sdk/middleware-retry":"3.40.0","@aws-sdk/middleware-sdk-sts":"3.40.0","@aws-sdk/middleware-serde":"3.40.0","@aws-sdk/middleware-signing":"3.40.0","@aws-sdk/middleware-stack":"3.40.0","@aws-sdk/middleware-user-agent":"3.40.0","@aws-sdk/node-config-provider":"3.40.0","@aws-sdk/node-http-handler":"3.40.0","@aws-sdk/protocol-http":"3.40.0","@aws-sdk/smithy-client":"3.40.0","@aws-sdk/types":"3.40.0","@aws-sdk/url-parser":"3.40.0","@aws-sdk/util-base64-browser":"3.37.0","@aws-sdk/util-base64-node":"3.37.0","@aws-sdk/util-body-length-browser":"3.37.0","@aws-sdk/util-body-length-node":"3.37.0","@aws-sdk/util-user-agent-browser":"3.40.0","@aws-sdk/util-user-agent-node":"3.40.0","@aws-sdk/util-utf8-browser":"3.37.0","@aws-sdk/util-utf8-node":"3.37.0","entities":"2.2.0","fast-xml-parser":"3.19.0","tslib":"^2.3.0"},"devDependencies":{"@aws-sdk/service-client-documentation-generator":"3.38.0","@types/node":"^12.7.5","downlevel-dts":"0.7.0","jest":"^26.1.0","rimraf":"^3.0.0","ts-jest":"^26.4.1","typedoc":"^0.19.2","typescript":"~4.3.5"},"engines":{"node":">=10.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-sts","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-sts"}}');
+>>>>>>> 0aef20b (fix: gh-actions need node12 target)
 
 /***/ }),
 
@@ -27974,6 +27986,81 @@ exports.debug = debug; // for test
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+/***/ 7672:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const core_1 = __importDefault(__nccwpck_require__(2186));
+const client_codedeploy_1 = __nccwpck_require__(6692);
+async function run() {
+    core_1.default.debug('Fetching active developments');
+    const region = core_1.default.getInput('aws-region', { required: true });
+    const codeDeployApp = core_1.default.getInput('application-name', {
+        required: true,
+    });
+    const codeDeployGroup = core_1.default.getInput('deployment-group-name', {
+        required: true,
+    });
+    const autoRollbackEnabled = core_1.default.getInput('auto-rollback-enabled') === 'true';
+    const client = new client_codedeploy_1.CodeDeployClient({
+        region,
+        customUserAgent: 'aws-cancel-deployment-action',
+    });
+    const listDeployments = new client_codedeploy_1.ListDeploymentsCommand({
+        applicationName: codeDeployApp,
+        deploymentGroupName: codeDeployGroup,
+    });
+    const { deployments } = await client.send(listDeployments);
+    if (!deployments) {
+        core_1.default.info('No active deployments');
+        return;
+    }
+    core_1.default.debug(`Deployments:\n${JSON.stringify(deployments)}`);
+    for (const deploymentId of deployments) {
+        const cancelDeployment = new client_codedeploy_1.StopDeploymentCommand({
+            deploymentId,
+            autoRollbackEnabled,
+        });
+        // eslint-disable-next-line no-await-in-loop
+        const response = await client.send(cancelDeployment);
+        core_1.default.debug(`Response:\n${JSON.stringify(response)}`);
+    }
+    core_1.default.info(`Cancelled ${deployments.length} deployments`);
+}
+exports.default = run;
+
+
+/***/ }),
+
+/***/ 6144:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const core_1 = __importDefault(__nccwpck_require__(2186));
+const action_1 = __importDefault(__nccwpck_require__(7672));
+(0, action_1.default)().catch((error) => {
+    if (!(error instanceof Error))
+        error = new Error(String(error));
+    core_1.default.setFailed(error.message);
+    core_1.default.debug(error.stack);
+});
+
+
+/***/ }),
+
+>>>>>>> 0aef20b (fix: gh-actions need node12 target)
 /***/ 7578:
 /***/ ((module) => {
 
@@ -28183,6 +28270,7 @@ module.exports = require("util");
 /******/ 	}
 /******/ 	
 /************************************************************************/
+<<<<<<< HEAD
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -28223,11 +28311,14 @@ module.exports = require("util");
 /******/ 		};
 /******/ 	})();
 /******/ 	
+=======
+>>>>>>> 0aef20b (fix: gh-actions need node12 target)
 /******/ 	/* webpack/runtime/compat */
 /******/ 	
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
 /******/ 	
 /************************************************************************/
+<<<<<<< HEAD
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
@@ -28303,5 +28394,14 @@ run().catch((error) => {
 })();
 
 module.exports = __webpack_exports__;
+=======
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __nccwpck_require__(6144);
+/******/ 	module.exports = __webpack_exports__;
+/******/ 	
+>>>>>>> 0aef20b (fix: gh-actions need node12 target)
 /******/ })()
 ;
