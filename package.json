@@ -1,0 +1,25 @@
+{
+  "name": "aws-cancel-deployment-action",
+  "description": "Cancels active CodeDeploy deployments",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@aws-sdk/client-codedeploy": "^3.40.0"
+  },
+  "devDependencies": {
+    "@aws-sdk/types": "^3.40.0",
+    "@vercel/ncc": "^0.31.1",
+    "typescript": "^4.6.0-dev.20211111",
+    "xo": "^0.46.4"
+  },
+  "scripts": {
+    "lint": "xo --fix ./src",
+    "build": "ncc build ./src/index.ts -o dist"
+  },
+  "xo": {
+    "space": true,
+    "semicolon": false,
+    "prettier": true
+  }
+}

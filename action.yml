@@ -1,0 +1,21 @@
+name: 'Amazon ECS "Cancel Active Deployments" Action for GitHub Actions'
+description: 'Cancels active CodeDeploy deployments'
+branding:
+  icon: 'cloud'
+  color: 'orange'
+inputs:
+  codedeploy-auto-rollback-enabled:
+    description: 'auto rollback enabled'
+    required: false
+  application-name:
+    description: 'aws application name'
+    required: true
+  deployment-group-name:
+    description: 'aws deployment group name'
+    required: true
+  region:
+    description: 'aws region'
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
