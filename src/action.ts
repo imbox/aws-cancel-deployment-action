@@ -5,6 +5,16 @@ import {
   StopDeploymentCommand,
 } from '@aws-sdk/client-codedeploy'
 
+const handleFatal = (error: unknown) => {
+  if (error instanceof Error) {
+    core.setFailed(error.message)
+    core.debug(error.stack ?? '')
+    return
+  }
+
+  core.error(`Non-error exception\n:${JSON.stringify(error)}`)
+}
+
 export default async function run(): Promise<void> {
   core.debug('Fetching active developments')
 
@@ -40,10 +50,18 @@ export default async function run(): Promise<void> {
       autoRollbackEnabled,
     })
 
-    // eslint-disable-next-line no-await-in-loop
-    const response = await client.send(cancelDeployment)
-    core.debug(`Response:\n${JSON.stringify(response)}`)
+    try {
+      // eslint-disable-next-line no-await-in-loop
+      const response = await client.send(cancelDeployment)
+      core.debug(`Response:\n${JSON.stringify(response)}`)
+    } catch (error: unknown) {
+      handleFatal(error)
+    }
   }
 
-  core.info(`Cancelled ${deployments.length} deployments`)
+  core.info(
+    `Successfully cancelled ${
+      deployments.length
+    } deployments, ${deployments.join(', ')}`,
+  )
 }
