@@ -8,15 +8,14 @@ import {
 export default async function run(): Promise<void> {
   core.debug('Fetching active developments')
 
-  const region = core.getInput('region', {required: true})
-  const codeDeployApp = core.getInput('codedeploy-application', {
+  const region = core.getInput('aws-region', {required: true})
+  const codeDeployApp = core.getInput('application-name', {
     required: true,
   })
-  const codeDeployGroup = core.getInput('codedeploy-deployment-group', {
+  const codeDeployGroup = core.getInput('deployment-group-name', {
     required: true,
   })
-  const autoRollbackEnabled =
-    core.getInput('codedeploy-auto-rollback-enabled') === 'true'
+  const autoRollbackEnabled = core.getInput('auto-rollback-enabled') === 'true'
 
   const client = new CodeDeployClient({
     region,

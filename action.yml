@@ -4,18 +4,18 @@ branding:
   icon: 'cloud'
   color: 'orange'
 inputs:
-  codedeploy-auto-rollback-enabled:
-    description: 'auto rollback enabled'
-    required: false
+  aws-region:
+    description: 'aws region'
+    required: true
   application-name:
     description: 'aws application name'
     required: true
   deployment-group-name:
     description: 'aws deployment group name'
     required: true
-  region:
-    description: 'aws region'
-    required: true
+  auto-rollback-enabled:
+    description: 'auto rollback enabled'
+    required: false
 runs:
   using: 'node16'
   main: 'dist/index.js'
