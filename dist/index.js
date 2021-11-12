@@ -27979,22 +27979,47 @@ exports.debug = debug; // for test
 
 "use strict";
 
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const core_1 = __importDefault(__nccwpck_require__(2186));
+const core = __importStar(__nccwpck_require__(2186));
 const client_codedeploy_1 = __nccwpck_require__(6692);
+const handleFatal = (error) => {
+    var _a;
+    if (error instanceof Error) {
+        core.setFailed(error);
+        core.debug((_a = error.stack) !== null && _a !== void 0 ? _a : '');
+        return;
+    }
+    core.error(`Non-error exception\n:${JSON.stringify(error)}`);
+};
 async function run() {
-    core_1.default.debug('Fetching active developments');
-    const region = core_1.default.getInput('aws-region', { required: true });
-    const codeDeployApp = core_1.default.getInput('application-name', {
+    core.debug('Fetching active developments');
+    const region = core.getInput('aws-region', { required: true });
+    const codeDeployApp = core.getInput('application-name', {
         required: true,
     });
-    const codeDeployGroup = core_1.default.getInput('deployment-group-name', {
+    const codeDeployGroup = core.getInput('deployment-group-name', {
         required: true,
     });
-    const autoRollbackEnabled = core_1.default.getInput('auto-rollback-enabled') === 'true';
+    const autoRollbackEnabled = core.getInput('auto-rollback-enabled') === 'true';
     const client = new client_codedeploy_1.CodeDeployClient({
         region,
         customUserAgent: 'aws-cancel-deployment-action',
@@ -28005,20 +28030,25 @@ async function run() {
     });
     const { deployments } = await client.send(listDeployments);
     if (!deployments) {
-        core_1.default.info('No active deployments');
+        core.info('No active deployments');
         return;
     }
-    core_1.default.debug(`Deployments:\n${JSON.stringify(deployments)}`);
+    core.debug(`Deployments:\n${JSON.stringify(deployments)}`);
     for (const deploymentId of deployments) {
         const cancelDeployment = new client_codedeploy_1.StopDeploymentCommand({
             deploymentId,
             autoRollbackEnabled,
         });
-        // eslint-disable-next-line no-await-in-loop
-        const response = await client.send(cancelDeployment);
-        core_1.default.debug(`Response:\n${JSON.stringify(response)}`);
+        try {
+            // eslint-disable-next-line no-await-in-loop
+            const response = await client.send(cancelDeployment);
+            core.debug(`Response:\n${JSON.stringify(response)}`);
+        }
+        catch (error) {
+            handleFatal(error);
+        }
     }
-    core_1.default.info(`Cancelled ${deployments.length} deployments`);
+    core.info(`Successfully cancelled ${deployments.length} deployments, ${deployments.join(', ')}`);
 }
 exports.default = run;
 
@@ -28030,18 +28060,45 @@ exports.default = run;
 
 "use strict";
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const core_1 = __importDefault(__nccwpck_require__(2186));
+const core = __importStar(__nccwpck_require__(2186));
 const action_1 = __importDefault(__nccwpck_require__(7672));
-(0, action_1.default)().catch((error) => {
-    if (!(error instanceof Error))
-        error = new Error(String(error));
-    core_1.default.setFailed(error.message);
-    core_1.default.debug(error.stack);
-});
+const handleFatal = (error) => {
+    var _a;
+    if (error instanceof Error) {
+        core.setFailed(error);
+        core.debug((_a = error.stack) !== null && _a !== void 0 ? _a : '');
+        return;
+    }
+    core.error(`Non-error exception\n:${JSON.stringify(error)}`);
+};
+// eslint-disable-next-line node/prefer-global/process
+process.on('uncaughtException', handleFatal);
+// eslint-disable-next-line node/prefer-global/process
+process.on('unhandledRejection', handleFatal);
+(0, action_1.default)().catch(handleFatal);
 
 
 /***/ }),
