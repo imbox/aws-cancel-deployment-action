@@ -28030,7 +28030,11 @@ async function run() {
         includeOnlyStatuses: [client_codedeploy_1.DeploymentStatus.IN_PROGRESS],
     });
     const { deployments } = await client.send(listDeployments);
-    if (!deployments) {
+    if (typeof deployments === 'undefined') {
+        core.debug('Unable to get deployments');
+        return;
+    }
+    if (deployments.length === 0) {
         core.info('No active deployments');
         return;
     }
@@ -28048,6 +28052,7 @@ async function run() {
         }
         catch (error) {
             handleFatal(error);
+            break;
         }
     }
     core.info(`Successfully cancelled ${deployments.length} deployments: ${deployments.join(', ')}`);
