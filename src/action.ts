@@ -50,7 +50,7 @@ export default async function run(): Promise<void> {
     return
   }
 
-  core.info(`Active deployments:\n${JSON.stringify(deployments)}`)
+  core.info(`Active deployments: ${JSON.stringify(deployments)}`)
   for (const deploymentId of deployments) {
     core.info(`Stopping deployment: ${deploymentId}`)
     const cancelDeployment = new StopDeploymentCommand({
@@ -58,11 +58,12 @@ export default async function run(): Promise<void> {
       autoRollbackEnabled,
     })
 
+    let response
     try {
       // eslint-disable-next-line no-await-in-loop
-      const response = await client.send(cancelDeployment)
-      core.debug(`Response:\n${JSON.stringify(response)}`)
+      response = await client.send(cancelDeployment)
     } catch (error: unknown) {
+      core.debug(`Response:\n${JSON.stringify(response)}`)
       handleFatal(error)
       break
     }
