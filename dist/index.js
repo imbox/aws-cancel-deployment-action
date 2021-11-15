@@ -28027,6 +28027,7 @@ async function run() {
     const listDeployments = new client_codedeploy_1.ListDeploymentsCommand({
         applicationName: codeDeployApp,
         deploymentGroupName: codeDeployGroup,
+        includeOnlyStatuses: [client_codedeploy_1.DeploymentStatus.IN_PROGRESS],
     });
     const { deployments } = await client.send(listDeployments);
     if (!deployments) {
@@ -28098,6 +28099,7 @@ const handleFatal = (error) => {
 process.on('uncaughtException', handleFatal);
 // eslint-disable-next-line node/prefer-global/process
 process.on('unhandledRejection', handleFatal);
+// Run action
 (0, action_1.default)().catch(handleFatal);
 
 
