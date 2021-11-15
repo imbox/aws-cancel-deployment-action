@@ -45,8 +45,9 @@ export default async function run(): Promise<void> {
     return
   }
 
-  core.debug(`Deployments:\n${JSON.stringify(deployments)}`)
+  core.info(`Active deployments:\n${JSON.stringify(deployments)}`)
   for (const deploymentId of deployments) {
+    core.info(`Stopping deployment: ${deploymentId}`)
     const cancelDeployment = new StopDeploymentCommand({
       deploymentId,
       autoRollbackEnabled,
@@ -64,6 +65,6 @@ export default async function run(): Promise<void> {
   core.info(
     `Successfully cancelled ${
       deployments.length
-    } deployments, ${deployments.join(', ')}`,
+    } deployments: ${deployments.join(', ')}`,
   )
 }
