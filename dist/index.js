@@ -28011,7 +28011,7 @@ const handleFatal = (error) => {
     core.error(`Non-error exception\n:${JSON.stringify(error)}`);
 };
 async function run() {
-    core.debug('Fetching active developments');
+    core.info('Fetching active developments');
     const region = core.getInput('aws-region', { required: true });
     const codeDeployApp = core.getInput('application-name', {
         required: true,
@@ -28020,6 +28020,7 @@ async function run() {
         required: true,
     });
     const autoRollbackEnabled = core.getInput('auto-rollback-enabled') === 'true';
+    core.debug(`test are: ${typeof core.getInput('auto-rollback-enabled')} ${core.getInput('auto-rollback-enabled')}`);
     const client = new client_codedeploy_1.CodeDeployClient({
         region,
         customUserAgent: 'aws-cancel-deployment-action',
@@ -28031,27 +28032,26 @@ async function run() {
     });
     const { deployments } = await client.send(listDeployments);
     if (typeof deployments === 'undefined') {
-        core.debug('Unable to get deployments');
+        core.warning('Unable to get deployments');
         return;
     }
     if (deployments.length === 0) {
         core.info('No active deployments');
         return;
     }
-    core.info(`Active deployments: ${JSON.stringify(deployments)}`);
+    core.info(`Active deployments: (${deployments.length}) ${JSON.stringify(deployments)}`);
     for (const deploymentId of deployments) {
         core.info(`Stopping deployment: ${deploymentId}`);
         const cancelDeployment = new client_codedeploy_1.StopDeploymentCommand({
             deploymentId,
             autoRollbackEnabled,
         });
-        let response;
         try {
             // eslint-disable-next-line no-await-in-loop
-            response = await client.send(cancelDeployment);
+            const response = await client.send(cancelDeployment);
+            core.debug(`Response:\n${JSON.stringify(response)}`);
         }
         catch (error) {
-            core.debug(`Response:\n${JSON.stringify(response)}`);
             handleFatal(error);
             break;
         }
