@@ -17,7 +17,7 @@ const handleFatal = (error: unknown) => {
 }
 
 export default async function run(): Promise<void> {
-  core.debug('Fetching active developments')
+  core.info('Fetching active developments')
 
   const region = core.getInput('aws-region', {required: true})
   const codeDeployApp = core.getInput('application-name', {
@@ -27,6 +27,11 @@ export default async function run(): Promise<void> {
     required: true,
   })
   const autoRollbackEnabled = core.getInput('auto-rollback-enabled') === 'true'
+  core.debug(
+    `test are: ${typeof core.getInput('auto-rollback-enabled')} ${core.getInput(
+      'auto-rollback-enabled',
+    )}`,
+  )
 
   const client = new CodeDeployClient({
     region,
@@ -41,7 +46,7 @@ export default async function run(): Promise<void> {
 
   const {deployments} = await client.send(listDeployments)
   if (typeof deployments === 'undefined') {
-    core.debug('Unable to get deployments')
+    core.warning('Unable to get deployments')
     return
   }
 
@@ -50,7 +55,11 @@ export default async function run(): Promise<void> {
     return
   }
 
-  core.info(`Active deployments: ${JSON.stringify(deployments)}`)
+  core.info(
+    `Active deployments: (${deployments.length}) ${JSON.stringify(
+      deployments,
+    )}`,
+  )
   for (const deploymentId of deployments) {
     core.info(`Stopping deployment: ${deploymentId}`)
     const cancelDeployment = new StopDeploymentCommand({
@@ -58,12 +67,11 @@ export default async function run(): Promise<void> {
       autoRollbackEnabled,
     })
 
-    let response
     try {
       // eslint-disable-next-line no-await-in-loop
-      response = await client.send(cancelDeployment)
-    } catch (error: unknown) {
+      const response = await client.send(cancelDeployment)
       core.debug(`Response:\n${JSON.stringify(response)}`)
+    } catch (error: unknown) {
       handleFatal(error)
       break
     }
