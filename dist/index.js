@@ -28034,8 +28034,9 @@ async function run() {
         core.info('No active deployments');
         return;
     }
-    core.debug(`Deployments:\n${JSON.stringify(deployments)}`);
+    core.info(`Active deployments:\n${JSON.stringify(deployments)}`);
     for (const deploymentId of deployments) {
+        core.info(`Stopping deployment: ${deploymentId}`);
         const cancelDeployment = new client_codedeploy_1.StopDeploymentCommand({
             deploymentId,
             autoRollbackEnabled,
@@ -28049,7 +28050,7 @@ async function run() {
             handleFatal(error);
         }
     }
-    core.info(`Successfully cancelled ${deployments.length} deployments, ${deployments.join(', ')}`);
+    core.info(`Successfully cancelled ${deployments.length} deployments: ${deployments.join(', ')}`);
 }
 exports.default = run;
 
