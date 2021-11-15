@@ -40,7 +40,12 @@ export default async function run(): Promise<void> {
   })
 
   const {deployments} = await client.send(listDeployments)
-  if (!deployments) {
+  if (typeof deployments === 'undefined') {
+    core.debug('Unable to get deployments')
+    return
+  }
+
+  if (deployments.length === 0) {
     core.info('No active deployments')
     return
   }
@@ -59,6 +64,7 @@ export default async function run(): Promise<void> {
       core.debug(`Response:\n${JSON.stringify(response)}`)
     } catch (error: unknown) {
       handleFatal(error)
+      break
     }
   }
 
