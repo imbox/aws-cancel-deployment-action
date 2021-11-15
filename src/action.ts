@@ -1,6 +1,7 @@
 import * as core from '@actions/core'
 import {
   CodeDeployClient,
+  DeploymentStatus,
   ListDeploymentsCommand,
   StopDeploymentCommand,
 } from '@aws-sdk/client-codedeploy'
@@ -35,6 +36,7 @@ export default async function run(): Promise<void> {
   const listDeployments = new ListDeploymentsCommand({
     applicationName: codeDeployApp,
     deploymentGroupName: codeDeployGroup,
+    includeOnlyStatuses: [DeploymentStatus.IN_PROGRESS],
   })
 
   const {deployments} = await client.send(listDeployments)

@@ -16,4 +16,6 @@ const handleFatal = (error: unknown) => {
 process.on('uncaughtException', handleFatal)
 // eslint-disable-next-line node/prefer-global/process
 process.on('unhandledRejection', handleFatal)
+
+// Run action
 run().catch(handleFatal)
