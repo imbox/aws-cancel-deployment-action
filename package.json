@@ -2,6 +2,8 @@
   "name": "aws-cancel-deployment-action",
   "description": "Cancels active CodeDeploy deployments",
   "version": "1.0.0",
+  "author": "ImBox Sweden AB",
+  "license": "MIT",
   "main": "dist/index.js",
   "dependencies": {
     "@actions/core": "^1.6.0",
